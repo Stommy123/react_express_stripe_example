@@ -1,0 +1,202 @@
+* {
+  font-family: ProximaNova;
+  font-size: 14px;
+}
+
+.main-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-nav {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #02a6f2;
+  height: 50px;
+}
+
+.main-nav a {
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+}
+
+.main-header h1 {
+  font-size: 25px;
+}
+
+.content-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 120px);
+}
+
+.content {
+  border: 1px solid #c4c4c4;
+  width: 90%;
+  height: 95%;
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.1);
+}
+
+.products {
+  padding: 24px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  display: grid;
+  grid-template-columns: repeat(3, 31%);
+  grid-column-gap: 20px;
+  grid-row-gap: 15px;
+  justify-content: center;
+}
+
+.product {
+  padding: 10px;
+  border-radius: 5px;
+  display: grid;
+  grid-row-gap: 5px;
+  padding-bottom: 5px;
+  height: fit-content;
+  text-align: center;
+  font-weight: 600;
+  font-size: 18px;
+  box-shadow: 0 2px 2px 0 rgba(60, 69, 73, 0.1), 0 2px 8px 0 rgba(119, 125, 128, 0.04),
+    0 2px 16px 0 rgba(60, 69, 73, 0.08);
+}
+
+.product img {
+  justify-self: center;
+  width: 95%;
+  height: 320px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.product button {
+  height: 40px;
+  width: 120px;
+  border-radius: 5px;
+  background-color: #02a6f2;
+  color: #fff;
+  font-weight: 600;
+  font-size: 15px;
+  justify-self: center;
+}
+
+.modal-backdrop {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  position: fixed;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background: rgba(38, 50, 56, 0.8);
+  animation: fadeIn 0.4s;
+}
+
+.modal-wrapper {
+  background: #fff;
+  box-shadow: 0 2px 4px 0 rgba(55, 71, 79, 0.3);
+  border-radius: 4px;
+  z-index: 1000;
+  padding: 25px;
+  width: 488px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 15%;
+  animation: fadeIn 0.5s ease, slideIn 0.5s ease forwards;
+}
+
+.modal-header {
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.modal-header h3 {
+  font-size: 25px;
+}
+
+.payment-form button {
+  height: 40px;
+  width: 120px;
+  border-radius: 5px;
+  background-color: #02a6f2;
+  color: #fff;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media only screen and (max-width: 1002px) {
+  .products {
+    grid-template-columns: repeat(2, 48%);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-25%);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
+
+/**
+* Shows how you can use CSS to style your Element's container.
+* These classes are added to your Stripe Element by default.
+* You can override these classNames by using the options passed
+* to the CardElement component.
+* https://stripe.com/docs/js/elements_object/create_element?type=card#elements_create-options-classes
+*/
+
+.StripeElement {
+  height: 40px;
+  padding: 10px 12px;
+  color: #32325d;
+  background-color: white;
+  border: 1px solid transparent;
+  border-radius: 4px;
+
+  box-shadow: 0 1px 3px 0 #e6ebf1;
+  -webkit-transition: box-shadow 150ms ease;
+  transition: box-shadow 150ms ease;
+}
+
+.StripeElement--focus {
+  box-shadow: 0 1px 3px 0 #cfd7df;
+}
+
+.StripeElement--invalid {
+  border-color: #fa755a;
+}
+
+.StripeElement--webkit-autofill {
+  background-color: #fefde5 !important;
+}
